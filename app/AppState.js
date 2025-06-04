@@ -1,8 +1,40 @@
 import { Car } from './models/Car.js'
+import { House } from './models/house.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
 class ObservableAppState extends EventEmitter {
+
+  houses = [
+    new House(
+      {
+        titleText: 'Rare Opportunity: Like-New Mansion',
+        price: 250000,
+        squareFeet: 11000,
+        locationCity: 'Caldwell',
+        locationState: 'ID',
+        imgUrl: 'https://static1.squarespace.com/static/5fc42d3b9955c744b550776c/t/615a47e437180f62d8ae178b/1633306598200/d509370d-54b0-4741-91d6-444c1dffee43.jpeg?format=1500w',
+        roomNum: 7,
+        description: 'Large McMansion Well Known for it\'s appearance on a renowned reality television series.',
+        listedDate: '06/03/2025',
+      }
+    ),
+    new House(
+      {
+        titleText: 'No LowBalling, I know what i have!!',
+        price: 550000,
+        squareFeet: 32,
+        locationCity: 'Missoula',
+        locationState: 'MO',
+        imgUrl: 'https://images.unsplash.com/photo-1619998959756-5f31b7a6269c?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        roomNum: 1.5,
+        description: 'This right here is the definition of bougoise livin\'!!!',
+        listedDate: '02/14/2016',
+      }
+    ),
+  ]
+
+
 
   cars = [
     new Car(

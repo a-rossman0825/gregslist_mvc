@@ -6,21 +6,21 @@ export class House {
     this.id = generateId();
     this.titleText = data.titleText;
     this.price = data.price;
-    this.squarefeet = data.squarefeet;
+    this.squareFeet = data.squareFeet;
     this.locationCity = data.locationCity;
     this.locationState = data.locationState;
     this.imgUrl = data.imgUrl;
     this.roomNum = data.roomNum;
     this.description = data.description;
     this.listedDate = data.listedDate == undefined ? new Date() : data.listedDate;
-    this.priceRating = data.priceRating;
     this.favoriteStatus = false;
 
   }
 
   get listingHTMLTemplate() {
     return `
-      <div class="col-md-6 col-lg-4 mb-3">
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-3">
           <div class="position-relative shadow car-border" style="border-color: ${this.priceRangeColor};">
             <img title="${this.description}" src="${this.imgUrl}" alt="${this.titleText}" class="car-img"/>
             <div>
@@ -33,7 +33,7 @@ export class House {
               <div class="row align-items-center justify-content-around px-2">
                 <div class="col-4">${this.listedDateString}</div>
                 <div class="col-2">${this.roomNum}br</div>
-                <div class="col-2">${this.squarefeet}ft²</div>
+                <div class="col-2">${this.squareFeetWithCommas}ft²</div>
                 <div class="col-4">${this.locationCity}, ${this.locationState}</div>
                 </div>
                 <div class="row justify-content-around">
@@ -48,20 +48,19 @@ export class House {
             </div>
           </div>
         </div> 
+      </div>
     `
   }
 
   get priceRangeColor() {
-    let priceColor = '';
-    switch (this.priceRating) {
-      case 'low':
-        return priceColor = 'green';
-      case 'medium':
-        return priceColor = 'yellow';
-      case 'high':
-        return priceColor = 'orange';
-      case 'too high':
-        return priceColor = 'red';
+    if (this.price <= 100000){
+      return 'green';
+    } else if (this.price <= 250000) {
+      return 'yellow';
+    } else if (this.price <= 400000) {
+      return 'orange';
+    } else {
+      return 'red';
     }
   }
 
@@ -79,5 +78,9 @@ export class House {
     } else {
       return 'star'
     }
-  };
+  }
+
+  get squareFeetWithCommas() {
+    return this.squareFeet.toLocaleString();
+  }
 }
