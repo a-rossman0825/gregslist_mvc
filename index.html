@@ -27,24 +27,51 @@
   <main>
     
     <section class="container">
-      <div class="row">
+      <div class="row mt-3">
         <div class="col-12">
           <h2>Houses</h2>
         </div>
       </div>
+      <div class="row justify-content-end me-3 mt-4">
+        <button class="rounded shadow col-3" type="button" onclick="app.housesController.toggleHouseForm()">List House</button>
+      </div>
     </section>
     <!-- SECTION CREATE HOUSE LISTING FORM  -->
     <section class="container">
-      <div id="house-form" class="row my-5">
+      <div id="house-form" class="row my-2">
         <div class="col-md-6">
-          <form>
-            <div class="col-md-6">
+          <form onsubmit="app.housesController.submitHouse()">
+            <div class="my-2">
               <label for="title-text">Headline</label>
                 <input id="title-text" type="text" placeholder="4 bedroom House..." name="title" required minlength="2"
-                  maxlength="50">
+                  maxlength="50" class="shadow">
             </div>
-            <div class="col-md-6">
-              
+            <div class="row mb-2">
+              <div class="col-6">
+                <label for="house-price">House Price</label>
+                <input id="house-price" type="number" placeholder="House Price..." name="price" required min="0"
+                  max="10000000" class="shadow">
+              </div>
+              <div class="col-6">
+                <label for="square-feet">Square Footage</label>
+                <input id="square-feet" type="number" placeholder="Square footage..." name="price" required min="0"
+                  max="10000000" class="shadow">
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-6">
+                <label for="house-city">City</label>
+                <input id="house-city" type="text" placeholder="Boise..." name="City" required minlength="1"
+                  maxlength="150" class="shadow">
+              </div>
+              <div class="col-6">
+                <label for="house-state">State</label>
+                <input id="house-state" type="text" placeholder="ID..." name="state" required minlength="2"
+                  maxlength="2" class="shadow">
+              </div>
+            </div>
+            <div class="row justify-content-end me-3 mt-4">
+              <button class="btn btn-success shadow col-3" type="submit">Submit</button>
             </div>
           </form>
         </div>
