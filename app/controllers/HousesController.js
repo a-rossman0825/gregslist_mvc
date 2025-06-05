@@ -31,4 +31,8 @@ export class HousesController {
     if (!confirmed) { return }
     housesService.deleteHouse(houseId);
   }
+
+  toggleHouseForm() {
+    document.getElementById('house-form').classList.toggle('d-none');
+  }
 }
