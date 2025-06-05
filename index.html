@@ -32,7 +32,7 @@
           <h2>Houses</h2>
         </div>
       </div>
-      <div class="row justify-content-end me-3 mt-4">
+      <div class="row justify-content-end me-3 mt-4 mb-3">
         <button class="rounded shadow col-3" type="button" onclick="app.housesController.toggleHouseForm()">List House</button>
       </div>
     </section>
@@ -69,13 +69,18 @@
                 <input id="house-state" type="text" placeholder="ID..." name="locationState" required minlength="2"
                   maxlength="2" class="shadow">
               </div>
-              <div class="col-12">
+              <div class="col-6">
+                <label for="house-rooms">Bedroom Number</label>
+                <input id="house-rooms" type="number" placeholder="Bedrooms..." name="roomNum" required min="1"
+                  max="1000" class="shadow">
+              </div>
+              <div class="col-6">
                 <label for="house-image">Image URL</label>
                 <input id="house-image" type="text" placeholder="Image url..." name="imgUrl" required minlength="2"
                   maxlength="10000" class="shadow">
               </div>
             </div>
-            <div class="row justify-content-end me-3 mt-4">
+            <div class="row justify-content-end me-3 mt-4 mb-2">
               <button class="btn btn-success shadow col-3" type="submit">Submit</button>
             </div>
           </form>

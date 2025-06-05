@@ -8,9 +8,10 @@ export class HousesController {
     AppState.on('houses', this.drawHouses);
 
     console.log('Houses Controller is ready 🏡');
-    this.drawHouses();
+    housesService.loadHouses();
   }
   drawHouses() {
+
     const houses = AppState.houses;
     let houseListingsContent = '';
     houses.forEach(house => houseListingsContent += house.listingHTMLTemplate);
@@ -23,6 +24,7 @@ export class HousesController {
     const formElm = event.target;
     const houseData = getFormData(formElm);
     housesService.createHouseListing(houseData);
+    // @ts-ignore
     formElm.reset();
   }
 
