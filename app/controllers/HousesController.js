@@ -6,11 +6,12 @@ export class HousesController {
     AppState.on('houses', this.drawHouses);
 
     console.log('Houses Controller is ready 🏡');
+    this.drawHouses();
   }
   drawHouses() {
     const houses = AppState.houses;
     let houseListingsContent = '';
-    houses.forEach((house) => houseListingsContent += house.listingHTMLTemplate);
+    houses.forEach(house => houseListingsContent += house.listingHTMLTemplate);
     const houseListingsElm = document.getElementById('house-listings');
     houseListingsElm.innerHTML = houseListingsContent;
   }

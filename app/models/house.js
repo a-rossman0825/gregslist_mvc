@@ -33,7 +33,7 @@ export class House {
               </div>
               <div class="row align-items-center justify-content-around px-2">
                 <div class="col-4">${this.listedDateString}</div>
-                <div class="col-2">${this.roomNum}</div>
+                <div class="col-2">${this.roomNum}br</div>
                 <div class="col-2">${this.squareFeetWithCommas}ft²</div>
                 <div class="col-4">${this.locationCity}, ${this.locationState}</div>
               </div>
