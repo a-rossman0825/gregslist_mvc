@@ -43,7 +43,7 @@
           <form onsubmit="app.housesController.submitHouse()">
             <div class="my-2">
               <label for="title-text">Headline</label>
-                <input id="title-text" type="text" placeholder="4 bedroom House..." name="title" required minlength="2"
+                <input id="title-text" type="text" placeholder="4 bedroom House..." name="titleText" required minlength="2"
                   maxlength="50" class="shadow">
             </div>
             <div class="row mb-2">
@@ -54,20 +54,25 @@
               </div>
               <div class="col-6">
                 <label for="square-feet">Square Footage</label>
-                <input id="square-feet" type="number" placeholder="Square footage..." name="price" required min="0"
+                <input id="square-feet" type="number" placeholder="Square footage..." name="squareFeet" required min="0"
                   max="10000000" class="shadow">
               </div>
             </div>
             <div class="row mb-2">
               <div class="col-6">
                 <label for="house-city">City</label>
-                <input id="house-city" type="text" placeholder="Boise..." name="City" required minlength="1"
+                <input id="house-city" type="text" placeholder="Boise..." name="locationCity" required minlength="1"
                   maxlength="150" class="shadow">
               </div>
               <div class="col-6">
                 <label for="house-state">State</label>
-                <input id="house-state" type="text" placeholder="ID..." name="state" required minlength="2"
+                <input id="house-state" type="text" placeholder="ID..." name="locationState" required minlength="2"
                   maxlength="2" class="shadow">
+              </div>
+              <div class="col-12">
+                <label for="house-image">Image URL</label>
+                <input id="house-image" type="text" placeholder="Image url..." name="imgUrl" required minlength="2"
+                  maxlength="10000" class="shadow">
               </div>
             </div>
             <div class="row justify-content-end me-3 mt-4">
