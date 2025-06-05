@@ -23,7 +23,7 @@
     </nav>
   </header>
 
-  
+
   <main>
     <!-- SECTION HOUSES LISTINGS -->
     <section class="container">
@@ -33,13 +33,15 @@
         </div>
       </div>
     </section>
-    <section id="houses-listings" class="container">
+    <section class="container">
       <!-- STUB HOUSE LISTINGS TEMPLATE  -->
-      <!-- 
-      <div class="row">
+      <div id="house-listings"  class="row">
+
         <div class="col-md-6 col-lg-4 mb-3">
           <div class="position-relative shadow car-border" style="border-color: red;">
-            <img src="https://static1.squarespace.com/static/5fc42d3b9955c744b550776c/t/615a47e437180f62d8ae178b/1633306598200/d509370d-54b0-4741-91d6-444c1dffee43.jpeg?format=1500w" alt="haunted mansion" class="car-img"/>
+            <img
+              src="https://static1.squarespace.com/static/5fc42d3b9955c744b550776c/t/615a47e437180f62d8ae178b/1633306598200/d509370d-54b0-4741-91d6-444c1dffee43.jpeg?format=1500w"
+              alt="haunted mansion" class="car-img" />
             <div>
               <span class="car-price bg-dark fs-2 px-2 d-inline-block" style="color: red;">$1500000</span>
             </div>
@@ -52,125 +54,124 @@
                 <div class="col-2">2br</div>
                 <div class="col-2">800ft²</div>
                 <div class="col-4">Caldwell, ID</div>
+              </div>
+              <div class="row justify-content-around">
+                <div class="col-1">
+                  <i class="text-secondary fs-3 mdi mdi-star-outline"></i>
                 </div>
-                <div class="row justify-content-around">
-                  <div class="col-1">
-                    <i class="text-secondary fs-3 mdi mdi-star-outline"></i>
-                  </div>
-                  <div class="col-1">
-                    <i class="text-secondary fs-3 mdi mdi-trash-can"></i>
-                  </div>
+                <div class="col-1">
+                  <i class="text-secondary fs-3 mdi mdi-trash-can"></i>
                 </div>
               </div>
             </div>
           </div>
-        </div> 
+        </div>
       </div>
-        -->
-        
     </section>
-    
+
 
     <!-- !SECTION  CARS LISTINGS-->
     <!-- TODO put your house stuff up here! -->
-<!-- NOTE REMOVE D-NONE DIV AFTER HOUSE LISTING COMPLETE -->
-<div class="d-none">
-    <section class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2>Cars</h2>
-          <button class="btn btn-outline-dark" onclick="app.carsController.toggleCarSection()">Toggle cars</button>
+    <!-- NOTE REMOVE D-NONE DIV AFTER HOUSE LISTING COMPLETE -->
+    <div class="d-none">
+      <section class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Cars</h2>
+            <button class="btn btn-outline-dark" onclick="app.carsController.toggleCarSection()">Toggle cars</button>
+          </div>
         </div>
-      </div>
 
-    </section>
-    <section id="cars-section" class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <form onsubmit="app.carsController.submitCar()">
-            <div class="mb-3">
-              <label for="car-make">Car Make</label>
-              <input id="car-make" type="text" placeholder="Car make..." name="make" required minlength="2"
-                maxlength="50">
-            </div>
-            <div class="mb-3">
-              <label for="car-model">Car Model</label>
-              <input id="car-model" type="text" placeholder="Car model..." name="model" required maxlength="100">
-            </div>
-            <div class="mb-3">
-              <label for="car-year">Car Year</label>
-              <input id="car-year" type="number" placeholder="Car year..." name="year" required min="1925" max="2025">
-            </div>
-            <div class="mb-3">
-              <label for="car-price">Car Price</label>
-              <input id="car-price" type="number" placeholder="Car price..." name="price" required min="0"
-                max="10000000">
-            </div>
-            <div class="mb-3">
-              <label for="car-color">Car Color</label>
-              <input id="car-color" type="color" name="color" value="#FF0000" required>
-            </div>
-            <div class="mb-3">
-              <label for="car-miles">Car Mileage</label>
-              <input id="car-miles" type="number" placeholder="Car miles..." name="mileage" required min="0"
-                max="10000000">
-            </div>
-            <div class="mb-3">
-              <label for="car-cylinders">Car Cylinders</label>
-              <input id="car-cylinders" type="number" placeholder="Car cylinders..." name="cylinders" required min="2"
-                max="16">
-            </div>
-            <div class="mb-3">
-              <label for="car-img-url">Car Image URL</label>
-              <input id="car-img-url" type="url" placeholder="Car Image URL..." name="imgUrl" required maxlength="1000">
-            </div>
-            <div class="mb-3">
-              <label for="car-has-manual-transmission">Does the car have a manual transmission?</label>
-              <input id="car-has-manual-transmission" type="checkbox" name="isManualTransmission" class="car-checkbox">
-            </div>
-            <div class="d-flex gap-3">
+      </section>
+      <section id="cars-section" class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <form onsubmit="app.carsController.submitCar()">
               <div class="mb-3">
-                <label for="car-fuel-type">Car Fuel Type</label>
-                <select id="car-fuel-type" name="fuelType" required>
-                  <option value="gas">Gas</option>
-                  <option value="diesel">Diesel</option>
-                  <option value="bat fuel">Bat Fuel</option>
-                  <option value="electric">Electric</option>
-                </select>
+                <label for="car-make">Car Make</label>
+                <input id="car-make" type="text" placeholder="Car make..." name="make" required minlength="2"
+                  maxlength="50">
               </div>
               <div class="mb-3">
-                <label for="car-title-status">Car Title Status</label>
-                <select id="car-title-status" name="titleStatus">
-                  <option value="">Select a status</option>
-                  <option value="clean">Clean</option>
-                  <option value="rebuilt">Rebuilt</option>
-                  <option value="salvage">Salvage</option>
-                  <option value="unknown">Unknown</option>
-                </select>
+                <label for="car-model">Car Model</label>
+                <input id="car-model" type="text" placeholder="Car model..." name="model" required maxlength="100">
               </div>
-            </div>
+              <div class="mb-3">
+                <label for="car-year">Car Year</label>
+                <input id="car-year" type="number" placeholder="Car year..." name="year" required min="1925" max="2025">
+              </div>
+              <div class="mb-3">
+                <label for="car-price">Car Price</label>
+                <input id="car-price" type="number" placeholder="Car price..." name="price" required min="0"
+                  max="10000000">
+              </div>
+              <div class="mb-3">
+                <label for="car-color">Car Color</label>
+                <input id="car-color" type="color" name="color" value="#FF0000" required>
+              </div>
+              <div class="mb-3">
+                <label for="car-miles">Car Mileage</label>
+                <input id="car-miles" type="number" placeholder="Car miles..." name="mileage" required min="0"
+                  max="10000000">
+              </div>
+              <div class="mb-3">
+                <label for="car-cylinders">Car Cylinders</label>
+                <input id="car-cylinders" type="number" placeholder="Car cylinders..." name="cylinders" required min="2"
+                  max="16">
+              </div>
+              <div class="mb-3">
+                <label for="car-img-url">Car Image URL</label>
+                <input id="car-img-url" type="url" placeholder="Car Image URL..." name="imgUrl" required
+                  maxlength="1000">
+              </div>
+              <div class="mb-3">
+                <label for="car-has-manual-transmission">Does the car have a manual transmission?</label>
+                <input id="car-has-manual-transmission" type="checkbox" name="isManualTransmission"
+                  class="car-checkbox">
+              </div>
+              <div class="d-flex gap-3">
+                <div class="mb-3">
+                  <label for="car-fuel-type">Car Fuel Type</label>
+                  <select id="car-fuel-type" name="fuelType" required>
+                    <option value="gas">Gas</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="bat fuel">Bat Fuel</option>
+                    <option value="electric">Electric</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="car-title-status">Car Title Status</label>
+                  <select id="car-title-status" name="titleStatus">
+                    <option value="">Select a status</option>
+                    <option value="clean">Clean</option>
+                    <option value="rebuilt">Rebuilt</option>
+                    <option value="salvage">Salvage</option>
+                    <option value="unknown">Unknown</option>
+                  </select>
+                </div>
+              </div>
 
-            <div class="mb-3">
-              <!-- NOTE resets the form -->
-              <button class="btn btn-outline-dark" type="reset">
-                Reset
-              </button>
-              <!-- NOTE submits the form -->
-              <button class="btn btn-success" type="submit">
-                Submit
-              </button>
-            </div>
-          </form>
+              <div class="mb-3">
+                <!-- NOTE resets the form -->
+                <button class="btn btn-outline-dark" type="reset">
+                  Reset
+                </button>
+                <!-- NOTE submits the form -->
+                <button class="btn btn-success" type="submit">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="https://images.unsplash.com/photo-1530065928592-fb0dc85d2f27?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="two ladies sitting in a car" class="img-fluid h-75 w-100 object-fit-cover">
+          </div>
         </div>
-        <div class="col-md-6">
-          <img
-            src="https://images.unsplash.com/photo-1530065928592-fb0dc85d2f27?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="two ladies sitting in a car" class="img-fluid h-75 w-100 object-fit-cover">
-        </div>
-      </div>
-      <div id="car-listings" class="row">
-        <!-- STUB car listing template -->
-        <!-- <div class="col-md-6 mb-3">
+        <div id="car-listings" class="row">
+          <!-- STUB car listing template -->
+          <!-- <div class="col-md-6 mb-3">
           <div class="position-relative shadow car-border" style="border-color: #e23834;">
             <img
               src="https://images.unsplash.com/photo-1725199583250-9f59567ba965?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1pYXRhfGVufDB8fDB8fHwy"
@@ -191,9 +192,9 @@
             </div>
           </div>
         </div> -->
-      </div>
-    </section>
-</div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer class="text-bg-dark">

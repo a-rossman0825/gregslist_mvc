@@ -12,17 +12,18 @@ export class House {
     this.imgUrl = data.imgUrl;
     this.roomNum = data.roomNum;
     this.description = data.description;
-    this.listedDate = data.listedDate == undefined ? new Date() : data.listedDate;
+    this.listedDate = data.listedDate == undefined ? new Date() : new Date(data.listedDate);
     this.favoriteStatus = false;
 
   }
 
   get listingHTMLTemplate() {
     return `
-      <div class="row">
         <div class="col-md-6 col-lg-4 mb-3">
           <div class="position-relative shadow car-border" style="border-color: ${this.priceRangeColor};">
-            <img title="${this.description}" src="${this.imgUrl}" alt="${this.titleText}" class="car-img"/>
+            <img
+            src="${this.imgUrl}"
+            alt="haunted mansion" class="car-img" />
             <div>
               <span class="car-price bg-dark fs-2 px-2 d-inline-block" style="color: ${this.priceRangeColor};">$${this.priceWithCommas}</span>
             </div>
@@ -32,23 +33,21 @@ export class House {
               </div>
               <div class="row align-items-center justify-content-around px-2">
                 <div class="col-4">${this.listedDateString}</div>
-                <div class="col-2">${this.roomNum}br</div>
+                <div class="col-2">${this.roomNum}</div>
                 <div class="col-2">${this.squareFeetWithCommas}ft²</div>
                 <div class="col-4">${this.locationCity}, ${this.locationState}</div>
+              </div>
+              <div class="row justify-content-around">
+                <div class="col-1">
+                  <i class="text-secondary fs-3 mdi mdi-${this.favoriteStatusCheck}"></i>
                 </div>
-                <div class="row justify-content-around">
-                  <div class="col-1">
-                    <i class="text-secondary fs-3 mdi mdi-${this.favoriteStatusCheck}"></i>
-                  </div>
-                  <div class="col-1">
-                    <i class="text-secondary fs-3 mdi mdi-trash-can"></i>
-                  </div>
+                <div class="col-1">
+                  <i class="text-secondary fs-3 mdi mdi-trash-can"></i>
                 </div>
               </div>
             </div>
           </div>
-        </div> 
-      </div>
+        </div>
     `
   }
 
@@ -65,7 +64,7 @@ export class House {
   }
 
   get listedDateString() {
-    return this.listedDate.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' });
+    return this.listedDate.toLocaleDateString('en-US', { month: 'numeric', day: '2-digit', year: 'numeric'});
   }
 
   get priceWithCommas() {
