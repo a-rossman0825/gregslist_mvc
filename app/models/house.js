@@ -42,7 +42,7 @@ export class House {
                   <i class="text-secondary fs-3 mdi mdi-${this.favoriteStatusCheck}"></i>
                 </div>
                 <div class="col-1">
-                  <i class="text-secondary fs-3 mdi mdi-trash-can"></i>
+                  <i class="text-secondary fs-3 mdi mdi-trash-can" type="button" onclick="app.housesController.confirmDelete('${this.id}')"></i>
                 </div>
               </div>
             </div>
